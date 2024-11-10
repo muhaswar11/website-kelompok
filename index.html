@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        /* Basic Styling */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #E3F2FD;
+        }
+
+        .login-container {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #1E88E5;
+        }
+
+        .input-group {
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group label {
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #1E88E5;
+        }
+
+        .input-group input {
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .error-message {
+            color: #E53935;
+            font-size: 0.875rem;
+            display: none;
+            margin-top: -0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #1E88E5;
+            color: white;
+            font-size: 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .login-btn:hover {
+            background-color: #1565C0;
+        }
+
+        /* Footer styling */
+        footer {
+            margin-top: 1.5rem;
+            text-align: center;
+            color: #1E88E5;
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 500px) {
+            .login-container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <div class="error-message" id="error-message">Username atau password salah!</div>
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Masukkan username">
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Masukkan password">
+        </div>
+        <button class="login-btn" onclick="login()">Login</button>
+    </div>
+
+    <footer>
+        SEALAMAT DATANG  - MUH. ASWAR. A DAN ALIFIYA ANNISA
+    </footer>
+
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            if (!username || !password) {
+                errorMessage.textContent = 'Form login tidak boleh kosong!';
+                errorMessage.style.display = 'block';
+                return;
+            }
+
+            const validUsername = 'admin';
+            const validPassword = '1234';
+
+            if (username === validUsername && password === validPassword) {
+                window.location.href = 'halaman-utama.html';
+            } else {
+                errorMessage.textContent = 'Username atau password salah!';
+                errorMessage.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
+
+<script>
+    // Fungsi untuk masuk ke mode layar penuh
+    function openFullscreen() {
+        const elem = document.documentElement;
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.mozRequestFullScreen) { // Firefox
+            elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { // IE/Edge
+            elem.msRequestFullscreen();
+        }
+    }
+
+    // Memanggil fungsi layar penuh saat halaman login dimuat
+    window.onload = openFullscreen;
+
+    function login() {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const errorMessage = document.getElementById('error-message');
+
+        if (!username || !password) {
+            errorMessage.textContent = 'Form login tidak boleh kosong!';
+            errorMessage.style.display = 'block';
+            return;
+        }
+
+        const validUsername = 'aswar';
+        const validPassword = 'alifiya';
+
+        if (username === validUsername && password === validPassword) {
+            window.location.href = 'halaman-utama.html';
+        } else {
+            errorMessage.textContent = 'Username atau password salah!';
+            errorMessage.style.display = 'block';
+        }
+    }
+</script>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Utama</title>
+    <style>
+        /* Basic Styling */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #E3F2FD;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 500px;
+        }
+
+        h1 {
+            margin-bottom: 1rem;
+            color: #1E88E5;
+        }
+
+        .logout-btn {
+            padding: 0.75rem;
+            background-color: #1E88E5;
+            color: white;
+            font-size: 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .logout-btn:hover {
+            background-color: #1565C0;
+        }
+
+        /* Footer styling */
+        footer {
+            margin-top: 1.5rem;
+            text-align: center;
+            color: #1E88E5;
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 500px) {
+            .container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Selamat Datang di Halaman Utama</h1>
+        <p>Anda telah berhasil login.</p>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <footer>
+         MUH. ASWAR. A, ALIFIYA ANNISA
+    </footer>
+
+    <script>
+        function logout() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
+
+<script>
+    // Fungsi untuk masuk ke mode layar penuh
+    function openFullscreen() {
+        const elem = document.documentElement;
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.mozRequestFullScreen) { // Firefox
+            elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { // IE/Edge
+            elem.msRequestFullscreen();
+        }
+    }
+
+    // Memanggil fungsi layar penuh saat halaman utama dimuat
+    window.onload = openFullscreen;
+
+    function logout() {
+        window.location.href = 'index.html';
+    }
+</script>
